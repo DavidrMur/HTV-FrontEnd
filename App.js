@@ -9,7 +9,7 @@ import MainPage from './containers/MainPage/MainPage';
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
-  reducer: transcriptReducer
+  transcript: transcriptReducer
 })
 const store = createStore(rootReducer, 
   applyMiddleware(sagaMiddleware)

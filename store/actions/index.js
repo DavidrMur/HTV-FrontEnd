@@ -1,3 +1,5 @@
 export {
-    getTranscriptTimes
+    getTranscriptTimes,
+    setTranscriptTimes,
+    setYtLink
 } from './transcript';

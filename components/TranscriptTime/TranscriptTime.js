@@ -2,12 +2,12 @@ import React from 'react';
 import { TextInput, StyleSheet, Text, View, ImageBackground, Image, Button, TouchableOpacity, TouchableOpacityComponent} from 'react-native';
 import { sanFranciscoWeights } from 'react-native-typography'; 
 
-const summarizedCard = (props) => {
+const transcriptTime = (props) => {
     return (
             <View style={styles.card}>
             <TouchableOpacity>
-            <Text style={styles.cardTitle}>{props.title}</Text>
-            <Text style={styles.cardDate}>{props.date}</Text>
+            <Text style={styles.cardTitle}>{props.time}</Text>
+            <Text style={styles.cardDate}>{props.time}</Text>
             </TouchableOpacity>
             </View>
     );
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default summarizedCard;
+export default transcriptTime;

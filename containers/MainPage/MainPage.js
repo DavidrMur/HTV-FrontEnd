@@ -19,6 +19,13 @@ class MainPage extends Component {
         this.setState({ytLink: event.target.value});
     }
 
+
+    goHandler=()=>{
+        this.props.setYtLink(this.state.ytLink);
+        this.props.setYtLink('https://www.youtube.com/watch?v=skc-ZEU9kO8')
+        this.props.navigation.navigate({routeName:"Video"})
+    }
+
     render() {
       return (
         <View style = {styles.mainContent}>
@@ -133,7 +140,7 @@ class MainPage extends Component {
   
   const mapDispatchToProps = dispatch => {
     return {
-        getTranscriptTimes: (options) => dispatch(actions.getTranscriptTimes(options)),
+        setYtLink: (ytLink) => dispatch(actions.setYtLink(ytLink)),
     };
 };
 
