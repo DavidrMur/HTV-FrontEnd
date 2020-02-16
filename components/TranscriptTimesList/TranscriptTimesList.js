@@ -8,11 +8,14 @@ const transcriptTimesList = (props) => {
     const timeList = (
         props.times.map((time) => {
             return <TranscriptTime
+            key={time}
             time={time}
             link={props.link}
             />
             })
     );
+
+    //const timeText = (<Text>`Here are the results for word ${props.word}`</Text>{timeList})
 
     return (
         <ScrollView style={styles.cardList}>
