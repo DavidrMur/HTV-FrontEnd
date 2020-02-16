@@ -1,1 +1,2 @@
-export const GET_EXAMPLE = "GET_EXAMPLE";
+
+export const GET_TRANSCRIPT_TIMES = "GET_TRANSCRIPT_TIMES";
