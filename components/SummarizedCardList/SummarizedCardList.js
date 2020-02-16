@@ -14,7 +14,8 @@ const summarizedCard = (props) => {
 
 const styles = StyleSheet.create({
     cardList: {
-        alignItems:'center'
+        alignItems:'center',
+        left: 20
     }
 });
 

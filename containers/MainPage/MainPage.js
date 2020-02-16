@@ -23,15 +23,20 @@ class MainPage extends Component {
       return (
         <View style = {styles.mainContent}>
             <View style={styles.header}>
-                <Text style={styles.headerTitle}>Note It</Text>
-                    <View style={styles.headerSearchContainer}>
-                        <TextInput style={styles.headerInput} placeholder="Input link to summarize" onChange={(event) => this.inputHandler(event)} />
-                        <TouchableOpacity style={styles.headerButton} onPress={() => this.props.getTranscriptTimes('https://www.youtube.com/watch?v=1aA1WGON49E')} title="Beep">
-                            <Text style={styles.headerButtonText}>Go</Text>
-                        </TouchableOpacity>
+                <View style={styles.headerContainer}>
+                    <Text style={styles.headerTitle}>Note It</Text>
+                        <View style={styles.headerSearchContainer}>
+                            <TextInput style={styles.headerInput} placeholder="Input link to summarize" onChange={(event) => this.inputHandler(event)} />
+                            <TouchableOpacity style={styles.headerButton} onPress={() => this.props.getTranscriptTimes('https://www.youtube.com/watch?v=1aA1WGON49E')} title="Beep">
+                                <Text style={styles.headerButtonText}>Go</Text>
+                            </TouchableOpacity>
+                        </View>
+                    <Divider style={{borderWeight: 10}} />
+                    <View style={{backgroundColor: '#f9f9f9f9', alignItems:'left', left: -20, height: 700}}>
+                        <Text style={styles.bodyTitle}>Your Recent Summaries</Text>
+                        <SummarizedCardList />
                     </View>
-                <Divider style={{fontWeight: 'bold'}} />
-                <SummarizedCardList />
+                </View>
             </View>
         <View >
             
@@ -43,45 +48,14 @@ class MainPage extends Component {
   }
 
   const styles = StyleSheet.create({
-    mainContent: {
-        position: 'absolute',
-        flexDirection: 'column',
-        backgroundColor: 'blue',
-        alignContent:'center'
-    },
-    container: {
-    width: 280,
-    height: 90,
-    position: 'absolute',
-    top: 60,
-    left: 10,
-    backgroundColor: 'blue',
-    borderRadius: 12,
-    padding: 5,
-    shadowColor: 'black',
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
-    shadowOffset: {
-        height: 0,
-        width: 0
-    },
-    elevation: 2,
-    flexDirection: "column",
-    alignItems: 'center',
-    backgroundColor: 'white',
-    borderRadius: 50,
-    margin: 8,
-    justifyContent: 'center',
-    },
-    heading: {
-        fontSize: 32,
-        height: 50
-    },
     header: {
-        height: 50,
+        height: 500,
         position: 'absolute',
+        top: 60,
+        width: 500
+    },
+    headerContainer: {
         left: 20,
-        top: 60
     },
     headerTitle: {
         ...sanFranciscoWeights.semibold,
@@ -121,6 +95,14 @@ class MainPage extends Component {
         margin: 8,
         textAlign: 'center',
         alignSelf: 'center'
+    },
+    bodyTitle: {
+        ...sanFranciscoWeights.regular,
+        letterSpacing: 1,
+        fontSize: 24,
+        margin: 20,
+        marginLeft: 0,
+        left: 20
     }
     
   });
