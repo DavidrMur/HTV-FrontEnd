@@ -1,11 +1,11 @@
 import React from 'react';
-import { TextInput, StyleSheet, Text, View, ImageBackground, Image, Button, TouchableOpacity, TouchableOpacityComponent} from 'react-native';
+import { TextInput, StyleSheet, Text, View, ImageBackground, Image, Button, TouchableOpacity, TouchableOpacityComponent, Linking} from 'react-native';
 import { sanFranciscoWeights } from 'react-native-typography'; 
 
 const summarizedCard = (props) => {
     return (
             <View style={styles.card}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress = {() => Linking.openURL(props.link)}>
             <Text style={styles.cardTitle}>{props.title}</Text>
             <Text style={styles.cardDate}>{props.date}</Text>
             </TouchableOpacity>

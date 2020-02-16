@@ -1,6 +1,7 @@
 import React from 'react';
-import { TextInput, StyleSheet, Text, View, ImageBackground, Image, Button, TouchableOpacity, TouchableOpacityComponent} from 'react-native';
+import { TextInput, StyleSheet, Text, View, ImageBackground, Image, Button, TouchableOpacity, TouchableOpacityComponent, ScrollView} from 'react-native';
 import TranscriptTime from '../TranscriptTime/TranscriptTime';
+import { sanFranciscoWeights } from 'react-native-typography'; 
 
 const transcriptTimesList = (props) => {
 
@@ -9,6 +10,7 @@ const transcriptTimesList = (props) => {
             return <TranscriptTime
             key={time}
             time={time}
+            link={props.link}
             />
             })
     );
@@ -16,16 +18,23 @@ const transcriptTimesList = (props) => {
     //const timeText = (<Text>`Here are the results for word ${props.word}`</Text>{timeList})
 
     return (
-        <View style={styles.cardList}>
-            {props.times.length !=  0 ? timeList : <Text style={{top: 60}}>Do Somethig</Text>}
-        </View>
+        <ScrollView style={styles.cardList}>
+            {!props.keyword ? <Text style={styles.cardText}>Please enter a keyword to search</Text> : <Text style={styles.cardText}>{`Results for Keyword: ${props.keyword}`}</Text>}
+            {props.times.length !=  0 ? timeList : null}
+        </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
     cardList: {
-        
-        left: 20
+        left: 20,
+        flexDirection: 'column',
+        // width: 300,
+        // height: 10
+    },
+    cardText: {
+        ...sanFranciscoWeights.normal,
+        fontSize: 14,
     }
 });
 

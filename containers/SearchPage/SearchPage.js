@@ -25,14 +25,19 @@ class SearchPage extends Component {
     goHandler=()=>{
         console.log(this.props.transcriptTimes);
         this.props.getTranscriptTimes([this.props.ytLink, this.state.keyword])
-    
+        
+    }
+
+    backHandler = () => {
+        this.props.navigation.navigate({routeName:"Welcome"});
+        this.props.setTranscriptTimes([]);
     }
 
     render() {
       return (
         <View style = {styles.bodyContainer}>
             <View style = {styles.bodyHeader}>
-                <TouchableOpacity onPress={()=>this.goHandler()}>
+                <TouchableOpacity onPress={()=>this.backHandler()}>
                     <Text style={styles.bodyHeaderButton}>{'<  Back'}</Text>
                 </TouchableOpacity>
                 <Divider />
@@ -46,7 +51,7 @@ class SearchPage extends Component {
                     </TouchableOpacity>
                 </View>
             </View>
-            <TranscriptTimesList times={this.props.transcriptTimes}/>
+            <TranscriptTimesList keyword={this.state.keyword} times={this.props.transcriptTimes} link={this.props.ytLink}/>
             {/* <WebView
                 source={{ uri: 'https://www.youtube.com/embed/ZZ5LpwO-An4' }}
                 style={{ marginTop: 20 }}
@@ -126,6 +131,7 @@ class SearchPage extends Component {
   const mapDispatchToProps = dispatch => {
     return {
         getTranscriptTimes: (options) => dispatch(actions.getTranscriptTimes(options)),
+        setTranscriptTimes: (payload) => dispatch(actions.setTranscriptTimes(payload))
     };
 };
 
