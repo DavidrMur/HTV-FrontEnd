@@ -32,12 +32,17 @@ class MainPage extends Component {
                 <View style={styles.headerContainer}>
                     <Text style={styles.headerTitle}>Note It</Text>
                         <View style={styles.headerSearchContainer}>
-                            <TextInput style={styles.headerInput} placeholder="Input link to summarize" onChange={(event) => this.inputHandler(event)} />
+                            <TextInput style={styles.headerInput} placeholder= 'https://www.youtube.com/watch?v=skc-ZEU9kO8' onChange={(event) => this.inputHandler(event)} />
                             <TouchableOpacity style={styles.headerButton} onPress={()=>this.goHandler()} title="Beep">
                                 <Text style={styles.headerButtonText}>Go</Text>
                             </TouchableOpacity>
                         </View>
                     <Divider style={{borderWeight: 10}} />
+                    <View style={{backgroundColor: '#f9f9f9f9', alignItems:'left', left: -20, height: 700}}>
+                        <Text style={styles.bodyTitle}>Your Recent Summaries</Text>
+                        <SummarizedCardList />
+                    </View>
+                    <Divider />
                     <View style={{backgroundColor: '#f9f9f9f9', alignItems:'left', left: -20, height: 700}}>
                         <Text style={styles.bodyTitle}>Your Recent Summaries</Text>
                         <SummarizedCardList />

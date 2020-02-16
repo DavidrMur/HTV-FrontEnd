@@ -1,11 +1,11 @@
 import React from 'react';
-import { TextInput, StyleSheet, Text, View, ImageBackground, Image, Button, TouchableOpacity, TouchableOpacityComponent} from 'react-native';
+import { TextInput, StyleSheet, Text, View, ImageBackground, Image, Button, TouchableOpacity, TouchableOpacityComponent, Linking} from 'react-native';
 import { sanFranciscoWeights } from 'react-native-typography'; 
 
 const transcriptTime = (props) => {
     return (
             <View style={styles.card}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress = {() => Linking.openURL(`${props.link}#t=${Math.trunc(props.time)}`)} >
             <Text style={styles.cardTitle}>{props.time}</Text>
             <Text style={styles.cardDate}>{props.time}</Text>
             </TouchableOpacity>
@@ -15,8 +15,8 @@ const transcriptTime = (props) => {
 
 const styles = StyleSheet.create({
     card: {
-        height: 100,
-        width: 300,
+        height: 50,
+        width: 100,
         borderWidth: 1,
         borderRadius: 10,
         margin: 10,
