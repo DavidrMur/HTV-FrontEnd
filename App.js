@@ -5,7 +5,7 @@ import { watchTranscript } from './store/sagas/index';
 import transcriptReducer from './store/reducers/transcript';
 import createSagaMiddleware from 'redux-saga';
 import MainPage from './containers/MainPage/MainPage';
-
+import Navigator from './navigation/Navigator'
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
@@ -21,7 +21,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <MainPage />
+        <Navigator></Navigator>
       </Provider>
     );
   } 

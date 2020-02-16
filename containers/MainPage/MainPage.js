@@ -19,6 +19,11 @@ class MainPage extends Component {
         this.setState({ytLink: event.target.value});
     }
 
+    goHandler=()=>{
+        this.props.getTranscriptTimes('https://www.youtube.com/watch?v=1aA1WGON49E')
+        this.props.navigation.navigate({routeName:"Video"})
+    }
+
     render() {
       return (
         <View style = {styles.mainContent}>
@@ -27,7 +32,7 @@ class MainPage extends Component {
                     <Text style={styles.headerTitle}>Note It</Text>
                         <View style={styles.headerSearchContainer}>
                             <TextInput style={styles.headerInput} placeholder="Input link to summarize" onChange={(event) => this.inputHandler(event)} />
-                            <TouchableOpacity style={styles.headerButton} onPress={() => this.props.getTranscriptTimes('https://www.youtube.com/watch?v=1aA1WGON49E')} title="Beep">
+                            <TouchableOpacity style={styles.headerButton} onPress={()=>this.goHandler()} title="Beep">
                                 <Text style={styles.headerButtonText}>Go</Text>
                             </TouchableOpacity>
                         </View>
