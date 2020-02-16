@@ -1,3 +1,4 @@
+import * as actions from '../actions';
 import { put } from 'redux-saga/effects';
 import axios from 'axios';
 

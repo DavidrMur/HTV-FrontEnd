@@ -7,10 +7,13 @@ const transcriptTimesList = (props) => {
     const timeList = (
         props.times.map((time) => {
             return <TranscriptTime
+            key={time}
             time={time}
             />
             })
     );
+
+    //const timeText = (<Text>`Here are the results for word ${props.word}`</Text>{timeList})
 
     return (
         <View style={styles.cardList}>
@@ -21,7 +24,7 @@ const transcriptTimesList = (props) => {
 
 const styles = StyleSheet.create({
     cardList: {
-        alignItems:'center',
+        
         left: 20
     }
 });

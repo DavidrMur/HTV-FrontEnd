@@ -15,10 +15,10 @@ const transcriptTime = (props) => {
 
 const styles = StyleSheet.create({
     card: {
-        height: 100,
-        width: 300,
+        height: 50,
+        width: 200,
         borderWidth: 1,
-        borderRadius: 10,
+        borderRadius: 20,
         margin: 10,
         padding: 5,
         shadowOffset:{  width: 5,  height: 5,  },
