@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index'; 
 import { sanFranciscoWeights } from 'react-native-typography'; 
 import SummarizedCardList from '../../components/SummarizedCardList/SummarizedCardList';
+import WebView from 'react-native-webview';
 
 class SearchPage extends Component {
   constructor(props) {
@@ -29,10 +30,14 @@ class SearchPage extends Component {
         <View style = {styles.bodyContainer}>
             <View style = {styles.bodyHeader}>
                 <TouchableOpacity onPress={()=>this.goHandler()}>
-                    <Text style={styles.bodyHeaderButton}>{'< Back '}</Text>
+                    <Text style={styles.bodyHeaderButton}>Back</Text>
                 </TouchableOpacity>
             </View>
             <Text>Stuff</Text>
+            <WebView
+                source={{ uri: 'https://www.youtube.com/embed/ZZ5LpwO-An4' }}
+                style={{ marginTop: 20 }}
+                />
         </View>
         
       );
