@@ -8,6 +8,7 @@ import SummarizedCardList from '../../components/SummarizedCardList/SummarizedCa
 import WebView from 'react-native-webview';
 import TranscriptTimesList from '../../components/TranscriptTimesList/TranscriptTimesList';
 
+
 class SearchPage extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +25,7 @@ class SearchPage extends Component {
     goHandler=()=>{
         console.log(this.props.transcriptTimes);
         this.props.getTranscriptTimes([this.props.ytLink, this.state.keyword])
-        
+    
     }
 
     render() {
@@ -120,6 +121,7 @@ class SearchPage extends Component {
         transcriptTimes: state.transcript.transcriptTimes
     }
   }
+
   
   const mapDispatchToProps = dispatch => {
     return {
@@ -128,3 +130,4 @@ class SearchPage extends Component {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchPage)
+
