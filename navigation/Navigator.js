@@ -1,12 +1,18 @@
 import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 import MainScreen from '../containers/MainPage/MainPage'
-import LinkDisplayScreen from '../screens/linkDisplayScreen'
+import SearchPage from '../containers/SearchPage/SearchPage';
 
-const Navigator = createStackNavigator({
+const Navigator = createStackNavigator(
+    {
     Welcome: MainScreen,
-    Video: LinkDisplayScreen
-})
+    Video: SearchPage,
+    },
+    {
+        headerMode: 'none'
+    }
+    
+);
 
 
 export default createAppContainer(Navigator)
